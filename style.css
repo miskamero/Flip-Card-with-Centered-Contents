@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Varela+Round&display=swap);
+body {
+    font-family: "Varela?Round", sans-serif;
+    background: #eee;
+    margin: 0px;
+}
+header{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #0f5d8a;
+}
+header p{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+    margin: 0px;
+    padding: 0px;
+    text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.815);
+}
+h1{
+    text-align: center;
+    color: #3f82da;
+    font-size: 50px;
+    font-weight: 100;
+    margin: 0px;
+    padding: 0px;
+    text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.815);
+}
+
+.flipcard:hover .cardcontents{
+    transform: rotateY(180deg);
+}
+
+.flipcard{
+    margin-top: 100px;
+    text-align: center;
+    height: 60vw;
+    width: 60vw;
+    max-height: 300px;
+    max-width: 300px;
+    min-width: 200px;
+    min-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardcontents{
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+    /*Above lines set the transition to be smooth and the card to be 3D*/
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.frontside, .backside{
+    backface-visibility: hidden;
+    /*Above line set the backside to be hidden*/
+    position: absolute;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    /*Height and width 100% so that they fill the cards and don't cause weird transitions*/
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    border-radius: 50px;
+}
+
+.backside p{
+    color: white;
+    font-size: 1.6em;
+    /*Set the text to be white and large*/
+}
+
+.backside{
+    transform: rotateY(180deg);
+    /*Sets the backside to be reversed so that it can be flipped and is readable*/
+    background-color: #0f5d8a;
+}
+
+/* Center the front contents */
+.contents{
+    max-width: min-content;
+    width: 100%;
+    height: min-content;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+/* Center the back contents */
+.backcontents{
+    max-width: max-content;
+    width: 100%;
+    height: max-content;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
